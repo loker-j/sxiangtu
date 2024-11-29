@@ -1,0 +1,82 @@
+.lottery-page {
+  max-width: 480px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 1rem;
+  position: relative;
+}
+
+.back-button {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--color-text);
+  padding: 0.5rem;
+  transition: opacity 0.3s ease;
+}
+
+.back-button:hover {
+  opacity: 0.8;
+}
+
+.back-arrow {
+  font-size: 1.2rem;
+}
+
+.lottery-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.lottery-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.draw-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0 10rem;
+  align-items: center;
+}
+
+.draw-button {
+  width: 120px;
+  height: 44px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-card-bg);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.draw-button:hover {
+  transform: translateY(-2px);
+  background: var(--color-hover-bg);
+}
+
+.draw-button:active {
+  transform: translateY(1px);
+  box-shadow: none;
+}
+
+.draw-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+@media (max-width: 480px) {
+  .lottery-page {
+    padding: 1rem;
+  }
+} 
