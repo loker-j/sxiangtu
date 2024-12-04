@@ -10,7 +10,7 @@ export default defineConfig({
       '@features': path.resolve(__dirname, './src/features')
     }
   },
-  base: '/',
+  base: '/sxiangtu/',
   build: {
     outDir: 'dist'
   }
