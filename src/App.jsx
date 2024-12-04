@@ -11,7 +11,7 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false)
-    }, 1000)
+    }, 500)
   }, [])
 
   if (isLoading) {
@@ -29,7 +29,7 @@ function App() {
         <div className="app-container">
           <Routes>
             <Route path="/" element={
-              <>
+              <div className="home-page">
                 <header className="header">
                   <h1>四象图模拟器</h1>
                   <h2>氪不改非，垫刀改变命运</h2>
@@ -53,7 +53,7 @@ function App() {
                     </Link>
                   </div>
                 </main>
-              </>
+              </div>
             } />
             <Route path="/lottery/:type" element={<LotteryPage />} />
           </Routes>

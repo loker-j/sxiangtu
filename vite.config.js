@@ -10,8 +10,14 @@ export default defineConfig({
       '@features': path.resolve(__dirname, './src/features')
     }
   },
-  base: '/sxiangtu/',
+  base: process.env.NODE_ENV === 'production' ? '/sxiangtu/' : '/',
   build: {
     outDir: 'dist'
+  },
+  server: {
+    port: 3000,
+    open: true,
+    host: '0.0.0.0',
+    cors: true
   }
 })
