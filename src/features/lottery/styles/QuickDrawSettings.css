@@ -1,0 +1,22 @@
+.quick-draw-settings {
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.quick-mode-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.quick-mode-toggle input {
+  width: 16px;
+  height: 16px;
+}
+
+.quick-mode-toggle span {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+} 
