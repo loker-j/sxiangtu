@@ -46,6 +46,7 @@ const LotteryResult = memo(({ items, isSingle, type, quickMode }) => {
         }
       }}
     >
+      <div className="lottery-background" />
       {renderedItems.map((item, index) => (
         <div 
           key={`${item.id}-${index}`} 
