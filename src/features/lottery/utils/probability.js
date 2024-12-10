@@ -57,7 +57,7 @@ const selectItemFromCategory = (category, itemPool) => {
 
 const determineSpecialSkillType = (random) => {
   // 金特技 30% 概率
-  if (random < 0.3) {
+  if (random < 0.1) {
     return 'GOLD_SPECIAL_SKILL'
   }
   // 紫特技 70% 概率

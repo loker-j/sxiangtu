@@ -1,11 +1,11 @@
 import { JINGSHI_ITEM_POOL } from './jingshiItems'
 
 export const PINGXING_PROBABILITY_RANGES = {
-  GOLD_EQUIPMENT_MATERIAL: 0.4941,
+  GOLD_EQUIPMENT_MATERIAL: 0.5248,
   BLUE_SCROLL_FRAGMENT: 0.1815,
   PURPLE_GOLD_SCROLL_FRAGMENT: 0.0909,
   PURPLE_GOLD_SCROLL: 0.0011,
-  SPECIAL_SKILL_FRAGMENT: 0.0341,
+  SPECIAL_SKILL_FRAGMENT: 0.0034,
   CURRENCY: 0.0604,
   REFINE_MATERIAL: 0.1168,
   TIANGONG_MATERIAL: 0.0211
@@ -560,13 +560,13 @@ export const PINGXING_ITEM_POOL = {
     {
       id: 'kaiwu_purple',
       name: '开物紫色特技碎片',
-      probability: 0.7,
+      probability: 0.95,
       count: 1
     },
     {
       id: 'kaiwu_gold',
       name: '开物金色特技碎片',
-      probability: 0.3,
+      probability: 0.05,
       count: 1,
       isRare: true
     }
