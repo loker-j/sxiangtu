@@ -46,6 +46,10 @@ const StatsDisplay = memo(({ stats, type }) => {
           <span>高级秘籍次数：</span>
           <span>{stats.advancedBookCount || 0}</span>
         </div>
+        <div className="stats-item">
+          <span>梦崽的海螺：</span>
+          <span>{stats.mengzaiConchCount || 0}</span>
+        </div>
       </div>
       <div className="stats-column">
         <div className="stats-item">

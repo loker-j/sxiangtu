@@ -37,7 +37,8 @@ export const useLottery = (type) => {
           advancedBookCount: 0,
           sealSkillCount: 0,
           redJadeCount: 0,
-          glassBeadCount: 0
+          glassBeadCount: 0,
+          mengzaiConchCount: 0  // 添加梦崽的海螺计数
         }
       case 'jingshi':
       default:
@@ -81,7 +82,8 @@ export const useLottery = (type) => {
         advancedBookCount: 0,
         sealSkillCount: 0,
         redJadeCount: 0,
-        glassBeadCount: 0
+        glassBeadCount: 0,
+        mengzaiConchCount: 0  // 添加梦崽的海螺临时计数
       }
 
       // 更新物品统计
@@ -139,6 +141,11 @@ export const useLottery = (type) => {
                 tempCounts.glassBeadCount += (item.count || 1)
               }
               break
+            case 'MENGZAI_CONCH':  // 添加梦崽的海螺统计逻辑
+              if (type === 'tianwen') {
+                tempCounts.mengzaiConchCount += (item.count || 1)
+              }
+              break
           }
         }
       })
@@ -161,6 +168,7 @@ export const useLottery = (type) => {
           advancedBookCount: prev.advancedBookCount + tempCounts.advancedBookCount,
           ...(type === 'tianwen' ? {
             sealSkillCount: prev.sealSkillCount + tempCounts.sealSkillCount,
+            mengzaiConchCount: prev.mengzaiConchCount + tempCounts.mengzaiConchCount,  // 添加梦崽的海螺统计更新
           } : {}),
           redJadeCount: prev.redJadeCount + tempCounts.redJadeCount,
           glassBeadCount: prev.glassBeadCount + tempCounts.glassBeadCount
