@@ -15,7 +15,7 @@
   left: -35px;
   right: -31px;
   bottom: 49px;
-  background-image: url('/assets/images/lottery-frame.png');
+  background-image: url('/assets/images/lottery-frame.webp');
   background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -166,7 +166,7 @@
   text-align: right !important; /* 文字右对齐 */
 }
 
-/* 快速模式下禁用所���动画 */
+/* 快速模式下禁用所有动画 */
 .lottery-result.quick-mode .item-card {
   animation: none !important;
 }
@@ -192,9 +192,16 @@
 /* 桌面端适配 */
 @media (min-width: 1024px) {
   .lottery-result {
-    width: 80%;
-    max-width: 720px;
+    width: 100%;
+    max-width: 1200px;
     padding: 2rem;
+    margin: 0 auto;
+    min-height: 300px;
+  }
+  
+  .lottery-background {
+    background-size: cover;
+    background-position: center;
   }
   
   .lottery-result.single .item-card {
@@ -212,5 +219,11 @@
   .lottery-result > .item-card {
     width: 60px;
     height: 60px;
+  }
+
+  /* 调整 item-detail-popup 高度 */
+  .lottery-result > .item-detail-popup {
+    top: 62px; /* 根据需要调整高度 */
+    overflow-y: auto; /* 允许垂直滚动 */
   }
 }

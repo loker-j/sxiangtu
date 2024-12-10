@@ -138,7 +138,7 @@
 
 @media (min-width: 1024px) {
   .lottery-page {
-    max-width: 960px;
+    max-width:960px;
     padding: 1.5rem;
   }
   
@@ -146,6 +146,8 @@
     gap: 1.2rem;
     margin-top: 1.2rem;
     padding: 1.5rem;
+    max-width: 960px;
+    margin: 0 auto;
   }
   
   .draw-buttons {

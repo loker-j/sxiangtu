@@ -2,13 +2,13 @@ export const getImageUrl = (itemName) => {
   try {
     // 对中文文件名进行编码
     const encodedName = encodeURIComponent(itemName)
-    return `/assets/items/${encodedName}.png`
+    return `/assets/items/${encodedName}.webp`
   } catch (error) {
     console.error('获取图片URL失败:', {
       error,
       itemName
     })
-    return '/assets/items/default.png'
+    return '/assets/items/default.webp'
   }
 }
 
