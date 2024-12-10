@@ -10,7 +10,7 @@ const QuickDrawSettings = memo(({ quickMode, onToggleQuickMode }) => {
           checked={quickMode}
           onChange={onToggleQuickMode}
         />
-        <span>快速模式（跳过动画）</span>
+        <span className="quick-mode-text">快速模式（跳过动画）</span>
       </label>
     </div>
   )

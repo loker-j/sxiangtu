@@ -11,6 +11,7 @@
 
 .lottery-header p {
   font-size: 0.9rem;
-  color: var(--color-text-secondary);
+  color: #ffffff;
   margin: 0;
+  font-family: var(--font-family-title);
 } 

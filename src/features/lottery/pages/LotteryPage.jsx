@@ -17,6 +17,7 @@ import '../styles/StatsControl.css'
 import '../styles/LotteryPage.css'
 import '../styles/StatsDisplay.css'
 import '../styles/RareItemNotification.css'
+import '../styles/QuickDrawSettings.css'
 
 const LotteryPage = memo(() => {
   const { type } = useParams()
