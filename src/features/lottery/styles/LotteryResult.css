@@ -1,31 +1,31 @@
 .lottery-result {
-  width: 450px;
-  height: 280px;
+  width: 100%;
+  height: auto;
+  min-height: 250px;
+  padding: 1rem;
   background: transparent;
   border: none;
   border-radius: 0;
-  padding: 42px;
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .lottery-background {
   position: absolute;
-  top: -30px;
-  left: -54px;
-  right: -43px;
-  bottom: 9px;
+  top: -13px;
+  left: -35px;
+  right: -31px;
+  bottom: 49px;
   background-image: url('/assets/images/lottery-frame.png');
   background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
   z-index: 0;
   pointer-events: none;
+  margin-top: 1rem;
 }
 
 .lottery-result.empty {
+  padding: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -43,29 +43,33 @@
 
 /* 单抽布局 */
 .lottery-result.single {
+  padding: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .lottery-result.single .item-card {
-  width: 85px;
-  height: 85px;
+  width: 70px;
+  height: 70px;
 }
 
 /* 十连布局 */
 .lottery-result.multi {
+  padding: 1rem;
+  padding-top: 2rem;
   display: grid;
-  grid-template-columns: repeat(5, 85px);
-  grid-template-rows: repeat(2, 85px);
-  gap: 1px;
-  padding: 62px 42px;
+  grid-template-columns: repeat(5, 50px);
+  grid-template-rows: repeat(2, 50px);
+  gap: 4px;
+  justify-content: center;
+  align-content: center;
 }
 
 .lottery-result > .item-card {
   position: relative;
-  width: 80px;
-  height: 80px;
+  width: 50px;
+  height: 50px;
   cursor: pointer;
   animation: fadeIn 0.3s ease;
   border: 1px solid var(--color-border);
@@ -79,8 +83,8 @@
 }
 
 .item-image {
-  width: 90%;
-  height: 90%;
+  width: 85%;
+  height: 85%;
   object-fit: contain;
   transition: transform 0.3s ease;
 }
@@ -130,38 +134,10 @@
   }
 }
 
-/* 移动端适配 */
-@media (max-width: 480px) {
-  .lottery-result {
-    height: 270px;
-    padding: 32px 4px;
-  }
-  
-  .lottery-result.multi {
-    grid-template-columns: repeat(5, 85px);
-    grid-template-rows: repeat(2, 85px);
-    gap: 2px;
-    padding: 52px 32px;
-  }
-  
-  .lottery-result.single .item-card,
-  .item-card {
-    width: 85px;
-    height: 85px;
-  }
-  
-  .lottery-background {
-    top: -15px;
-    left: -15px;
-    right: -15px;
-    bottom: -15px;
-  }
-} 
-
 .lottery-result > .item-detail-popup {
   position: absolute !important;
-  top: 39px;/* 物品详情距离顶端的距离*/
-  right: 18px;/* 物详情距离右边的详情*/
+  top: 50px;/* 物品详情距离顶端的距离*/
+  right: 34px;/* 物详情距离右边的详情*/
   width: 300px !important;
   min-width: 300px !important;
   max-width: 300px !important;
@@ -190,7 +166,7 @@
   text-align: right !important; /* 文字右对齐 */
 }
 
-/* 快速模式下禁用所有动画 */
+/* 快速模式下禁用所���动画 */
 .lottery-result.quick-mode .item-card {
   animation: none !important;
 }
@@ -211,4 +187,30 @@
 /* 快速模式下禁用hover动画 */
 .lottery-result.quick-mode .item-card:hover .item-image {
   transform: none;
+}
+
+/* 桌面端适配 */
+@media (min-width: 1024px) {
+  .lottery-result {
+    width: 80%;
+    max-width: 720px;
+    padding: 2rem;
+  }
+  
+  .lottery-result.single .item-card {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .lottery-result.multi {
+    padding-top: 2.5rem;
+    grid-template-columns: repeat(5, 60px);
+    grid-template-rows: repeat(2, 60px);
+    gap: 8px;
+  }
+  
+  .lottery-result > .item-card {
+    width: 60px;
+    height: 60px;
+  }
 }

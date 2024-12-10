@@ -1,12 +1,18 @@
 .app-container {
   width: 100%;
-  max-width: 720px;
   margin: 0 auto;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   padding: 1rem;
   box-sizing: border-box;
+}
+
+/* 桌面端适配 */
+@media (min-width: 720px) {
+  .app-container {
+    max-width: 720px;
+  }
 }
 
 .header {
