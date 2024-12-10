@@ -21,7 +21,7 @@
 /* 全局样式 - 移动端优先 */
 #root {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0 auto;
   position: relative;
   background-image: url('../assets/background.jpg');
@@ -30,7 +30,8 @@
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 /* 桌面端适配 */
@@ -47,6 +48,7 @@
   flex-direction: column;
   padding: 1rem;
   background: transparent;
+  min-height: min-content;
 }
 
 /* 标题样式 */
@@ -79,5 +81,32 @@ h1, h2 {
 .lottery-button:hover {
   background: var(--color-card-hover);
   transform: translateY(-2px);
+}
+
+/* 添加主内容区域的滚动样式 */
+.main-content {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 1rem;
+  min-height: min-content;
+}
+
+/* 优化滚动条样式 */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-secondary);
 }
 
