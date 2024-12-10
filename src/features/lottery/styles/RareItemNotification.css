@@ -19,7 +19,7 @@
   text-align: center; /* 文本居中 */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* 阴影效果 */
   animation: slideUp 0.3s ease; /* 上滑动画 */
-  margin-left: calc(50% - 100px); /* 居中位置 */
+  margin-left: calc(50% - 132px); /* 居中位置 */
   width: 262px; /* 固定宽度 */
 }
 

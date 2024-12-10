@@ -61,7 +61,7 @@ function App() {
                       rel="noopener noreferrer"
                     >
                       <h3>平行服打坐地点</h3>
-                      <p>查看最新打坐地点攻略</p>
+                      <p>点击讨论广场，最新发表</p>
                     </a>
                   </div>
 
