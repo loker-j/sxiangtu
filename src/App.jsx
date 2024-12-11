@@ -5,6 +5,8 @@ import LotteryPage from './features/lottery/pages/LotteryPage'
 import ErrorBoundary from './components/ErrorBoundary'
 import announcements from './data/announcements.json'
 import './App.css'
+import WeChatButton from './components/WeChatButton'
+import './styles/WeChatButton.css'
 
 function App() {
   const [isLoading, setIsLoading] = useState(true)
@@ -96,6 +98,7 @@ function App() {
             <Route path="/lottery/:type" element={<LotteryPage />} />
           </Routes>
         </div>
+        <WeChatButton />
       </Router>
     </ErrorBoundary>
   )
