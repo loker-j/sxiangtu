@@ -1,6 +1,6 @@
 import { useCallback, useRef, useEffect } from 'react'
-import { ITEM_POOLS } from '../constants/index.js'
 import { getImageUrl, preloadImage } from '../utils/imageUtils'
+import { ITEM_POOLS } from '../constants/itemPools'
 
 export const useOptimizedRender = (items, type) => {
   const renderTimeoutRef = useRef(null)
@@ -16,7 +16,13 @@ export const useOptimizedRender = (items, type) => {
   useEffect(() => {
     if (isFirstRender.current) {
       // 预加载常用物品图片
-      const commonItems = Object.values(ITEM_POOLS[type])
+      const itemPool = ITEM_POOLS[type]
+      if (!itemPool) {
+        console.warn(`未找到类型 ${type} 的物品池配置`)
+        return
+      }
+
+      const commonItems = Object.values(itemPool)
         .flat()
         .slice(0, 10) // 只预加载前10个常用物品
       

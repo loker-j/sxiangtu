@@ -237,13 +237,16 @@ export const useLottery = (type) => {
   useEffect(() => {
     if (process.env.NODE_ENV === 'development') {
       import('../utils/debug.js').then(({ generateImageReport }) => {
-        const allItems = Object.values(itemPool).flat()
+        const allItems = Object.values(itemPool)
+          .flat()
+          .filter(item => item && item.name)
+        
         generateImageReport(allItems).then(report => {
           if (report.missingImages.length > 0) {
-            console.warn('需要添加以下图片文件:', report.missingImages)
+            console.warn('需要添加以下WebP格式图片文件:', report.missingImages)
           }
           if (report.wrongTypeImages.length > 0) {
-            console.warn('以下文件格式错误:', report.wrongTypeImages)
+            console.warn('以下文件不是WebP格式:', report.wrongTypeImages)
           }
         })
       })

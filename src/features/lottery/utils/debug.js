@@ -1,5 +1,5 @@
 export const checkImageAvailability = async (itemName) => {
-  const url = `/assets/items/${encodeURIComponent(itemName)}.png`
+  const url = `/assets/items/${encodeURIComponent(itemName)}.webp`
   try {
     const response = await fetch(url)
     const result = {
@@ -36,7 +36,7 @@ export const generateImageReport = async (items) => {
   const wrongTypeImages = []
   const results = await Promise.allSettled(
     items.map(async item => {
-      const url = `/assets/items/${encodeURIComponent(item.name)}.png`
+      const url = `/assets/items/${encodeURIComponent(item.name)}.webp`
       try {
         const response = await fetch(url)
         const contentType = response.headers.get('content-type')
@@ -46,7 +46,7 @@ export const generateImageReport = async (items) => {
           return { ok: false, reason: 'not_found' }
         }
         
-        if (!contentType?.startsWith('image/')) {
+        if (!contentType?.startsWith('image/webp')) {
           wrongTypeImages.push(item.name)
           return { ok: false, reason: 'wrong_type', contentType }
         }

@@ -23,25 +23,4 @@ export const preloadImage = (url) => {
     }
     img.src = url
   })
-}
-
-// 添加图片格式检查函数
-export const checkImageFormat = async (url) => {
-  try {
-    const response = await fetch(url)
-    const contentType = response.headers.get('content-type')
-    
-    if (!contentType?.startsWith('image/')) {
-      console.warn('文件格式不是图片:', {
-        url,
-        contentType
-      })
-      return false
-    }
-    
-    return true
-  } catch (error) {
-    console.error('检查图片格式失败:', error)
-    return false
-  }
 } 
