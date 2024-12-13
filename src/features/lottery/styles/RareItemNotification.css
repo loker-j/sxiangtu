@@ -1,0 +1,60 @@
+.rare-item-notification {
+  position: fixed; /* 固定位置 */
+  top: 0; /* 顶部 */
+  left: 0; /* 左侧 */
+  right: 0; /* 右侧 */
+  bottom: 0; /* 底部 */
+  display: flex; /* 使用弹性布局 */
+  align-items: center; /* 恢复垂直居中 */
+  justify-content: flex-start; /* 改为左对齐 */
+  background: rgba(0, 0, 0, 0.6); /* 半透明黑色背景 */
+  z-index: 1000; /* 层级 */
+  animation: fadeIn 0.3s ease; /* 渐显动画 */
+}
+
+.notification-content {
+  background: var(--color-card-bg); /* 卡片背景色 */
+  padding: 1.5rem; /* 内边距 */
+  border-radius: 12px; /* 圆角 */
+  text-align: center; /* 文本居中 */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* 阴影效果 */
+  animation: slideUp 0.3s ease; /* 上滑动画 */
+  margin-left: calc(50% - 132px); /* 居中位置 */
+  width: 262px; /* 固定宽度 */
+}
+
+.notification-content h3 {
+  color: var(--color-primary); /* 主色 */
+  margin: 0 0 1rem 0; /* 外边距 */
+  font-size: 1.2rem; /* 字体大小 */
+}
+
+.notification-content p {
+  margin: 0 0 1.5rem 0; /* 外边距 */
+  color: var(--color-text); /* 文本颜色 */
+}
+
+.notification-content button {
+  padding: 0.5rem 2rem; /* 内边距 */
+  background: var(--color-primary); /* 按钮背景色 */
+  color: white; /* 按钮文本颜色 */
+  border: none; /* 无边框 */
+  border-radius: 4px; /* 圆角 */
+  cursor: pointer; /* 鼠标指针样式 */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; } /* 从透明到不透明 */
+  to { opacity: 1; } /* 完全不透明 */
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0; /* 从透明开始 */
+    transform: translateY(20px); /* 向下移动20px */
+  }
+  to {
+    opacity: 1; /* 完全不透明 */
+    transform: translateY(0); /* 回到原位 */
+  }
+} 

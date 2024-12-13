@@ -1,0 +1,36 @@
+.stats-control {
+  display: flex;
+  justify-content: center;
+  gap: 7rem;
+  padding: -2rem 10rem;
+}
+
+.stats-control .control-button {
+  min-width: 120px;
+  padding: 0.8rem 1.2rem;
+  margin: 0;
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  z-index: 1;
+}
+
+.control-button:hover {
+  background: var(--color-hover-bg);
+}
+
+/* 展示计数按钮样式 */
+.show-stats-button {
+  background: var(--color-primary);
+  color: rgb(15, 15, 15);
+  z-index: 2;
+}
+
+/* 重置计数按钮样式 */
+.reset-stats-button {
+  background: var(--color-danger);
+  color: rgb(7, 7, 7);
+  z-index: 2;
+} 

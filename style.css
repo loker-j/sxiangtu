@@ -1,0 +1,13 @@
+/* 内容容器 */
+.container {
+  width: 100%;
+  max-width: 500px; /* 或其他合适的宽度 */
+  margin: 0 auto; /* 居中显示 */
+  padding: 0 15px; /* 两侧留白 */
+}
+
+/* 确保所有内容都在容器内 */
+body {
+  margin: 0;
+  padding: 0;
+} 

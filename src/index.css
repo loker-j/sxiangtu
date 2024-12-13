@@ -1,0 +1,112 @@
+/* 重置样式 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-primary: #1D2327;    /* 墨黑色 - 主要文字和强调 */
+  --color-secondary: #4A4A4A;  /* 淡墨色 - 次要文字 */
+  --color-border: #8C8C8C;     /* 破墨灰 - 边框和分割线 */
+  --color-card-bg: #F2F1E9;    /* 生宣色 - 卡片背景 */
+  --color-card-hover: #E9E6DD; /* 老宣色 - 卡片hover状态 */
+  --color-decoration: #7A8B8B; /* 淡竹青 - 装饰元素 */
+  --color-warning: #363636;    /* 浅墨色 - 重要提示 */
+  
+  --color-text: var(--color-primary);
+  --color-text-secondary: var(--color-secondary);
+}
+
+/* 全局样式 - 移动端优先 */
+#root {
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0 auto;
+  position: relative;
+  background-image: url('../assets/background.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* 桌面端适配 */
+@media (min-width: 520px) {
+  #root {
+    width: 520px;
+    max-width: 720px;
+  }
+}
+
+.app-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background: transparent;
+  min-height: min-content;
+}
+
+/* 标题样式 */
+h1, h2 {
+  text-align: center;
+  margin: 0.5rem 0;
+  text-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
+}
+
+/* 按钮容器 */
+.button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  background: transparent;
+}
+
+/* 按钮样式 */
+.lottery-button {
+  padding: 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-card-bg);
+  backdrop-filter: blur(5px);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.lottery-button:hover {
+  background: var(--color-card-hover);
+  transform: translateY(-2px);
+}
+
+/* 添加主内容区域的滚动样式 */
+.main-content {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 1rem;
+  min-height: min-content;
+}
+
+/* 优化滚动条样式 */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-secondary);
+}
+

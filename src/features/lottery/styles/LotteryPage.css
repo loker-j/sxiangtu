@@ -1,0 +1,156 @@
+.lottery-page {
+  max-width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 0.5rem;
+  position: relative;
+  background: transparent;
+}
+
+.back-button {
+  position: absolute;
+  top: 0.3rem;
+  left: -1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--color-text);
+  padding: 0.2rem 0.5rem;
+  transition: opacity 0.3s ease;
+}
+
+.back-button:hover {
+  opacity: 0.8;
+}
+
+.back-arrow {
+  font-size: 1.2rem;
+}
+
+.lottery-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: -1.5rem;
+  background: rgba(242, 241, 233, 0);
+  border-radius: 12px;
+  padding: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0);
+}
+
+.lottery-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  width: 100%;
+  margin-top: -3rem;
+}
+
+.draw-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  padding: 0.5rem 1rem;
+  align-items: center;
+  margin-top: 0.8rem;
+}
+
+.draw-button {
+  width: 100%;
+  max-width: 200px;
+  height: 40px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-card-bg);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.draw-button:hover {
+  transform: translateY(-2px);
+  background: var(--color-hover-bg);
+}
+
+.draw-button:active {
+  transform: translateY(1px);
+  box-shadow: none;
+}
+
+.draw-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.stats-buttons {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0 1rem;
+  justify-content: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 580px) {
+  .lottery-page {
+    padding: 0.5rem;
+  }
+  
+  .draw-buttons {
+    padding: 0 1rem;
+  }
+  
+  .draw-button {
+    width: 100%;
+    max-width: 200px;
+  }
+}
+
+@media (min-width: 768px) {
+  .lottery-page {
+    max-width: 720px;
+    padding: 1rem;
+  }
+  
+  .lottery-content {
+    gap: 1rem;
+    margin-top: 1rem;
+    padding: 1rem;
+  }
+  
+  .draw-buttons {
+    padding: 0 1.5rem;
+  }
+  
+  .draw-button {
+    height: 44px;
+  }
+  
+  .lottery-controls {
+    gap: 1rem;
+    margin-top: -3rem;
+  }
+  
+  .draw-buttons {
+    margin-top: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lottery-page {
+    max-width:960px;
+    padding: 1.5rem;
+  }
+  
+  .lottery-content {
+    gap: 1.2rem;
+    margin-top: 1.2rem;
+    padding: 1.5rem;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  
+  .draw-buttons {
+    padding: 0 2rem;
+  }
+} 

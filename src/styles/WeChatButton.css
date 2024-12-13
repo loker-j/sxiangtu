@@ -1,0 +1,98 @@
+.wechat-button {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: transform 0.3s ease;
+  position: absolute;
+  bottom: 90px;
+  right: 1px;
+}
+
+.wechat-button:hover {
+  transform: scale(1.1);
+}
+
+.wechat-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+  animation: fadeIn 0.3s ease;
+}
+
+.popup-content {
+  background: var(--color-card-bg);
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 300px;
+  width: 90%;
+  animation: slideUp 0.3s ease;
+}
+
+.qr-code {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+}
+
+.popup-text {
+  margin-bottom: 1.5rem;
+}
+
+.popup-text p {
+  margin: 0.5rem 0;
+  color: var(--color-text);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.confirm-button {
+  padding: 0.5rem 2rem;
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.confirm-button:hover {
+  background: var(--color-primary-dark);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} 

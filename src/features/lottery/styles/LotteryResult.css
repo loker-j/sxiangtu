@@ -1,0 +1,233 @@
+.lottery-result {
+  width: 100%;
+  height: auto;
+  min-height: 250px;
+  padding: 1rem;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  position: relative;
+}
+
+.lottery-background {
+  position: absolute;
+  top: -13px;
+  left: -35px;
+  right: -31px;
+  bottom: 49px;
+  background-image: url('/assets/images/lottery-frame.webp');
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+  pointer-events: none;
+  margin-top: 1rem;
+}
+
+.lottery-result.empty {
+  padding: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 250px;
+}
+
+.empty-placeholder {
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+  padding: 0.8rem 1.2rem;
+  background: rgba(242, 241, 233, 0.8);
+  border-radius: 4px;
+  z-index: 1;
+}
+
+/* 单抽布局 */
+.lottery-result.single {
+  padding: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lottery-result.single .item-card {
+  width: 70px;
+  height: 70px;
+}
+
+/* 十连布局 */
+.lottery-result.multi {
+  padding: 1rem;
+  padding-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(5, 50px);
+  grid-template-rows: repeat(2, 50px);
+  gap: 4px;
+  justify-content: center;
+  align-content: center;
+}
+
+.lottery-result > .item-card {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  animation: fadeIn 0.3s ease;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--color-card-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+.item-image {
+  width: 85%;
+  height: 85%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.item-card:hover .item-image {
+  transform: scale(1.05);
+}
+
+.item-count {
+  position: absolute;
+  right: 2px;
+  bottom: 2px;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 4px;
+  background: rgba(0, 0, 0, 0.7);
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+/* 依次浮现动画 */
+.lottery-result.multi .item-card:nth-child(1) { animation-delay: 0s; }
+.lottery-result.multi .item-card:nth-child(2) { animation-delay: 0.05s; }
+.lottery-result.multi .item-card:nth-child(3) { animation-delay: 0.1s; }
+.lottery-result.multi .item-card:nth-child(4) { animation-delay: 0.15s; }
+.lottery-result.multi .item-card:nth-child(5) { animation-delay: 0.2s; }
+.lottery-result.multi .item-card:nth-child(6) { animation-delay: 0.25s; }
+.lottery-result.multi .item-card:nth-child(7) { animation-delay: 0.3s; }
+.lottery-result.multi .item-card:nth-child(8) { animation-delay: 0.35s; }
+.lottery-result.multi .item-card:nth-child(9) { animation-delay: 0.4s; }
+.lottery-result.multi .item-card:nth-child(10) { animation-delay: 0.45s; }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.lottery-result > .item-detail-popup {
+  position: absolute !important;
+  top: 25px;/* 物品详情距离顶端的距离*/
+  right: 24px;/* 物详情距离右边的详情*/
+  width: 300px !important;
+  min-width: 300px !important;
+  max-width: 300px !important;
+  height: auto !important;
+  flex: none !important;
+  transform: none !important;
+}
+
+/* 添加弹窗内容的样式 */
+.lottery-result > .item-detail-popup .popup-content {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important; /* 内容右对齐 */
+  flex-direction: row !important;
+  width: 100% !important;
+  background: transparent !important; /* 移除背景色 */
+  box-shadow: none !important; /* 移除阴影 */
+  border: none !important; /* 移除边框 */
+}
+
+.lottery-result > .item-detail-popup .popup-content h3 {
+  margin: 0 !important;
+  font-size: 1.1rem; /* 物品详情字体大小*/
+  color: var(--color-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: auto !important;
+  text-align: right !important; /* 文字右对齐 */
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8); /* 添加文字阴影提高可读性 */
+}
+
+/* 快速模式下禁用所有动画 */
+.lottery-result.quick-mode .item-card {
+  animation: none !important;
+}
+
+.lottery-result.quick-mode .item-card:nth-child(1),
+.lottery-result.quick-mode .item-card:nth-child(2),
+.lottery-result.quick-mode .item-card:nth-child(3),
+.lottery-result.quick-mode .item-card:nth-child(4),
+.lottery-result.quick-mode .item-card:nth-child(5),
+.lottery-result.quick-mode .item-card:nth-child(6),
+.lottery-result.quick-mode .item-card:nth-child(7),
+.lottery-result.quick-mode .item-card:nth-child(8),
+.lottery-result.quick-mode .item-card:nth-child(9),
+.lottery-result.quick-mode .item-card:nth-child(10) {
+  animation-delay: 0s !important;
+}
+
+/* 快速模式下禁用hover动画 */
+.lottery-result.quick-mode .item-card:hover .item-image {
+  transform: none;
+}
+
+/* 桌面端适配 */
+@media (min-width: 1024px) {
+  .lottery-result {
+    width: 100%;
+    max-width: 1200px;
+    padding: 2rem;
+    margin: 0 auto;
+    min-height: 300px;
+  }
+  
+  .lottery-background {
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .lottery-result.single .item-card {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .lottery-result.multi {
+    padding-top: 2.5rem;
+    grid-template-columns: repeat(5, 60px);
+    grid-template-rows: repeat(2, 60px);
+    gap: 8px;
+  }
+  
+  .lottery-result > .item-card {
+    width: 60px;
+    height: 60px;
+  }
+
+  /* 调整 item-detail-popup 高度 */
+  .lottery-result > .item-detail-popup {
+    top: 40px; /* 根据需要调整高度 */
+    overflow-y: auto; /* 允许垂直滚动 */
+  }
+}

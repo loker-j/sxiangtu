@@ -1,0 +1,27 @@
+.quick-draw-settings {
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  background: transparent;
+}
+
+.quick-mode-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  user-select: none;
+  background: transparent;
+}
+
+.quick-mode-toggle input {
+  width: 16px;
+  height: 16px;
+}
+
+.quick-mode-toggle .quick-mode-text {
+  font-size: 0.9rem;
+  color: #ffffff;
+  font-family: var(--font-family-title);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  font-weight: 500;
+} 

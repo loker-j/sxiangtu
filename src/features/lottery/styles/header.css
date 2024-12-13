@@ -1,0 +1,17 @@
+.lottery-header {
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.lottery-header h1 {
+  font-size: 2rem;
+  color: var(--color-text);
+  margin: 0 0 0.5rem 0;
+}
+
+.lottery-header p {
+  font-size: 0.9rem;
+  color: #ffffff;
+  margin: 0;
+  font-family: var(--font-family-title);
+} 

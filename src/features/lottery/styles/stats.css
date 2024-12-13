@@ -1,0 +1,47 @@
+.stats-control {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.control-button {
+  padding: 0.8rem 1.2rem;
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.control-button:hover {
+  background-color: var(--color-hover-bg);
+}
+
+.stats-display {
+  width: 100%;
+  max-height: 30vh;
+  padding: 1rem;
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  overflow: auto;
+}
+
+.stats-section {
+  margin-bottom: 1rem;
+}
+
+.stats-section:last-child {
+  margin-bottom: 0;
+}
+
+.stats-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.stats-item span:last-child {
+  font-family: monospace;
+} 
